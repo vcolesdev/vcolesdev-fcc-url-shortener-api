@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vcolesdev - URL Shortener Microservice</title>
+</head>
+<body>
+  <h1>URL Shortener via POST Request</h1>
+  <form action="/api/shorturl" id="formShortenUrl" method="POST">
+    <div>
+      <label for="original_url">Enter URL below:</label>
+      <div>
+        <input id="original_url" name="original_url" placeholder="https://api.nasa.gov/" type="url" required>
+      </div>
+    </div>
+    <div>
+      <button id="btnShortenUrl" form="formShortenUrl" type="submit" value="POST URL">
+        Shorten URL
+      </button>
+    </div>
+  </form>
+</body>
+</html>
