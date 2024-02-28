@@ -15,11 +15,11 @@ export const handleApiPostShortUrlRoute = async (req: Request, res: Response, ne
   // Check if the URL is valid
   const regexStr = /^(http|https):\/\/[^ "]+$/
   const urlRegex = new RegExp(regexStr);
-  if (!urlRegex.test(original_url)) console.error("Invalid URL");
+  if (!urlRegex.test(original_url)) res.json({error: "Invalid URL"});
 
   // Check for existing short_url
   await shortUrlModule.fn.checkExistingShortUrl(short_url);
-  const shortUrl = shortUrlModule.fn.createNewShortUrl(original_url, short_url);
+  const shortUrl = shortUrlModule.fn.createNewShortUrl(original_url);
 
   // Check if the URL is valid then save
   shortUrlModule.fn.checkIfValidUrl(original_url);
